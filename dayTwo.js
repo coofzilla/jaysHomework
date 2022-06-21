@@ -2,7 +2,14 @@
 // inner function will take object studentGenerator
 // add ANOTHER property to that object
 
-//better version
+function editStudent(student) {
+  return {
+    ...student,
+    studentName: "형주",
+    class: "C17",
+  };
+}
+
 function studentGenerator(studentName, age, hobby = "reading") {
   return {
     studentName,
@@ -11,22 +18,8 @@ function studentGenerator(studentName, age, hobby = "reading") {
   };
 }
 
-//console.log(studentGenerator("경은", "25", "coding"));
+const editedStudent = editStudent(studentGenerator("경은", 27, "coding"));
 
-// function editStudent(student) {
-//   //edit this student
-//   //return edited student
-//   return student;
-// }
-
-const student = studentGenerator("경은", "25", "coding");
+console.log(editedStudent);
 
 //https://dmitripavlutin.com/javascript-shallow-clone-objects/
-
-const editStudent = {
-  ...student,
-  studentName: "형주",
-  class: "C17",
-};
-
-console.log(editStudent);
